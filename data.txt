@@ -1,0 +1,2 @@
+Select if you want letter case to be taken into account for completion suggestions.
+ Choose whether you want to match case for the first letter or for all letters.
