@@ -1,15 +1,14 @@
 package com.kraaakilo;
-import com.kraaakilo.windows.CustomJframeWindow;
 
-import javax.swing.*;
-import java.awt.*;
+import com.kraaakilo.database.MySQLConnection;
+import com.kraaakilo.database.Product;
+
+import java.sql.*;
 
 public class Main {
-    public static void main(String[] args) {
-
-        JPanel panel = new JPanel();
-        panel.setBackground(Color.LIGHT_GRAY);
-        CustomJframeWindow window = new CustomJframeWindow(panel);
-
+    public static void main(String[] args) throws Exception {
+        MySQLConnection connection = new MySQLConnection();
+        Product product = new Product(connection);
+        product.all();
     }
 }
