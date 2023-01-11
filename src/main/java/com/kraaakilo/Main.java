@@ -1,14 +1,19 @@
 package com.kraaakilo;
 
-import com.kraaakilo.database.MySQLConnection;
-import com.kraaakilo.database.Product;
-
-import java.sql.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        MySQLConnection connection = new MySQLConnection();
-        Product product = new Product(connection);
-        product.all();
+    public static void main(String[] args) {
+        try {
+            Path file = Paths.get("./image.jpg");
+            Path copy = Paths.get("./out.jpg");
+            Files.copy(file,copy, StandardCopyOption.REPLACE_EXISTING);
+
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 }
